@@ -31,7 +31,6 @@
 		892AEFED1AAB564900FA906B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 892AEFEC1AAB564900FA906B /* libz.dylib */; };
 		892AEFEF1AAB565000FA906B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 892AEFEE1AAB565000FA906B /* libsqlite3.dylib */; };
 		89373F661B0AD10600A36A1D /* backArrowLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 89373F651B0AD10600A36A1D /* backArrowLine.png */; };
-		89D04B6B1B0C43B200653272 /* ContactsFinderTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D04B6A1B0C43B200653272 /* ContactsFinderTableViewController.m */; };
 		89ED01431B0AE50D00225C4E /* intro_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89ED013E1B0AE50D00225C4E /* intro_2.jpg */; };
 		89ED01441B0AE50D00225C4E /* intro_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89ED013F1B0AE50D00225C4E /* intro_1.jpg */; };
 		89ED01451B0AE50D00225C4E /* intro_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89ED01401B0AE50D00225C4E /* intro_4.jpg */; };
@@ -86,6 +85,7 @@
 		D2BEE4301B0696900087E842 /* QuestionnairePopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2BEE42F1B0696900087E842 /* QuestionnairePopUpView.xib */; };
 		D2BEE4321B0697300087E842 /* checkPopUp.png in Resources */ = {isa = PBXBuildFile; fileRef = D2BEE4311B0697300087E842 /* checkPopUp.png */; };
 		D2BEE4341B06ACCF0087E842 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = D2BEE4331B06ACCF0087E842 /* camera.png */; };
+		D2BEE4381B07A3950087E842 /* ContactsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BEE4371B07A3950087E842 /* ContactsTableViewController.m */; };
 		D2BEE44A1B07A4BC0087E842 /* AMSlideMenuContentSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BEE43C1B07A4BC0087E842 /* AMSlideMenuContentSegue.m */; };
 		D2BEE44B1B07A4BC0087E842 /* AMSlideMenuLeftMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BEE43E1B07A4BC0087E842 /* AMSlideMenuLeftMenuSegue.m */; };
 		D2BEE44C1B07A4BC0087E842 /* AMSlideMenuLeftTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BEE4401B07A4BC0087E842 /* AMSlideMenuLeftTableViewController.m */; };
@@ -168,8 +168,6 @@
 		892AEFEC1AAB564900FA906B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		892AEFEE1AAB565000FA906B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		89373F651B0AD10600A36A1D /* backArrowLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrowLine.png; sourceTree = "<group>"; };
-		89D04B691B0C43B200653272 /* ContactsFinderTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactsFinderTableViewController.h; path = hap/ContactsFinderTableViewController.h; sourceTree = SOURCE_ROOT; };
-		89D04B6A1B0C43B200653272 /* ContactsFinderTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactsFinderTableViewController.m; path = hap/ContactsFinderTableViewController.m; sourceTree = SOURCE_ROOT; };
 		89ED013E1B0AE50D00225C4E /* intro_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_2.jpg; sourceTree = "<group>"; };
 		89ED013F1B0AE50D00225C4E /* intro_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_1.jpg; sourceTree = "<group>"; };
 		89ED01401B0AE50D00225C4E /* intro_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_4.jpg; sourceTree = "<group>"; };
@@ -245,6 +243,8 @@
 		D2BEE42F1B0696900087E842 /* QuestionnairePopUpView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionnairePopUpView.xib; sourceTree = "<group>"; };
 		D2BEE4311B0697300087E842 /* checkPopUp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkPopUp.png; sourceTree = "<group>"; };
 		D2BEE4331B06ACCF0087E842 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		D2BEE4361B07A3950087E842 /* ContactsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsTableViewController.h; sourceTree = "<group>"; };
+		D2BEE4371B07A3950087E842 /* ContactsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsTableViewController.m; sourceTree = "<group>"; };
 		D2BEE43B1B07A4BC0087E842 /* AMSlideMenuContentSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuContentSegue.h; sourceTree = "<group>"; };
 		D2BEE43C1B07A4BC0087E842 /* AMSlideMenuContentSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMSlideMenuContentSegue.m; sourceTree = "<group>"; };
 		D2BEE43D1B07A4BC0087E842 /* AMSlideMenuLeftMenuSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMSlideMenuLeftMenuSegue.h; sourceTree = "<group>"; };
@@ -401,7 +401,7 @@
 				D2F47CB41B084892001F4E03 /* QR */,
 				D2DE243D1B081E0300A1516B /* Categories */,
 				D2DE24271B07D77300A1516B /* SMenu */,
-				D2BEE4351B07A0D20087E842 /* ContactsFinder */,
+				D2BEE4351B07A0D20087E842 /* Contacts */,
 				D2BEE4071B0532F50087E842 /* CustomsViews */,
 				D2BEE3E51B03FCD90087E842 /* Profile */,
 				D2BEE3D41B03CDAE0087E842 /* Calculating */,
@@ -690,14 +690,14 @@
 			name = QuestionnairePopUp;
 			sourceTree = "<group>";
 		};
-		D2BEE4351B07A0D20087E842 /* ContactsFinder */ = {
+		D2BEE4351B07A0D20087E842 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
 				D2BEE4391B07A39A0087E842 /* cells */,
-				89D04B691B0C43B200653272 /* ContactsFinderTableViewController.h */,
-				89D04B6A1B0C43B200653272 /* ContactsFinderTableViewController.m */,
+				D2BEE4361B07A3950087E842 /* ContactsTableViewController.h */,
+				D2BEE4371B07A3950087E842 /* ContactsTableViewController.m */,
 			);
-			name = ContactsFinder;
+			name = Contacts;
 			sourceTree = "<group>";
 		};
 		D2BEE4391B07A39A0087E842 /* cells */ = {
@@ -1023,7 +1023,6 @@
 				D2BEE44E1B07A4BC0087E842 /* AMSlideMenuRightMenuSegue.m in Sources */,
 				D2DE242A1B07D78800A1516B /* MainVC.m in Sources */,
 				D217682B1B01547F00E3CE67 /* QuestionCollectionViewCell.m in Sources */,
-				89D04B6B1B0C43B200653272 /* ContactsFinderTableViewController.m in Sources */,
 				D2BEE3FB1B0404270087E842 /* InterestsHeaderCollectionViewCell.m in Sources */,
 				D2BEE3F51B0404040087E842 /* ProfileCollectionViewController.m in Sources */,
 				D2F47CB71B0848B8001F4E03 /* QRImageViewController.m in Sources */,
@@ -1039,6 +1038,7 @@
 				D2F47CDD1B09228D001F4E03 /* ResultTableViewController.m in Sources */,
 				D2F47CBB1B085128001F4E03 /* MenuQRViewController.m in Sources */,
 				D2BEE3E31B03CE6F0087E842 /* FXBlurView.m in Sources */,
+				D2BEE4381B07A3950087E842 /* ContactsTableViewController.m in Sources */,
 				D2F47CE11B097026001F4E03 /* ResultTableViewCell.m in Sources */,
 				D2F47CC31B0853EA001F4E03 /* TTMQRCodeReader.m in Sources */,
 			);

@@ -1,18 +1,18 @@
 //
-//  ContactsFinderTableViewController.m
-//  Hi
+//  ContactsTableViewController.m
+//  HAP
 //
-//  Created by Joaquin Pereira on 19/05/15.
+//  Created by Joaquin Pereira on 5/16/15.
 //  Copyright (c) 2015 Joaquin Pereira. All rights reserved.
 //
 
-#import "ContactsFinderTableViewController.h"
+#import "ContactsTableViewController.h"
 
-@interface ContactsFinderTableViewController ()
+@interface ContactsTableViewController ()
 
 @end
 
-@implementation ContactsFinderTableViewController
+@implementation ContactsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
