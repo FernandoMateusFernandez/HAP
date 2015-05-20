@@ -25,6 +25,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "LeftMenuVC.h"
+#import <Parse/Parse.h>
 
 @interface LeftMenuVC()
 
@@ -47,6 +48,11 @@
         // The device is an iPhone or iPod touch.
         [self setFixedStatusBar];
     }
+    
+    
+    //
+    
+    self.btn_signOut.layer.cornerRadius = 15;
 }
 
 - (void)setFixedStatusBar
@@ -63,6 +69,20 @@
 }
 
 
+- (IBAction)signOut:(id)sender {
+    
+    [self performSegueWithIdentifier:@"logout" sender:self];
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+       [PFUser logOut];
+        
+    });
+    
+    
+    
+}
 
 
 
