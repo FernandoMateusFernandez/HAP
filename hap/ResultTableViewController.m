@@ -79,7 +79,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Algorithm"];
     
     [query whereKey:@"usertype" equalTo:user[@"neurotype"]];
-    [query whereKey:@"contacttype" equalTo:user[@"neurotype"]];
+    [query whereKey:@"contacttype" equalTo:self.contact[@"neurotype"]];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
