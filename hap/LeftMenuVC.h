@@ -28,4 +28,7 @@
 
 @interface LeftMenuVC : AMSlideMenuLeftTableViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *btn_logOut;
+- (IBAction)logOut:(id)sender;
+
 @end

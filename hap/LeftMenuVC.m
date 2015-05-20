@@ -25,6 +25,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "LeftMenuVC.h"
+#import <Parse/Parse.h>
 
 @interface LeftMenuVC()
 
@@ -37,6 +38,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    self.btn_logOut.layer.cornerRadius = 15;
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0 && ![UIApplication sharedApplication].isStatusBarHidden)
     {
@@ -66,4 +70,16 @@
 
 
 
+- (IBAction)logOut:(id)sender {
+    
+    
+    [self performSegueWithIdentifier:@"logOut" sender:self];
+    
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        
+        [PFUser logOut];
+    });
+    
+}
 @end

@@ -1409,7 +1409,7 @@
                         <sections>
                             <tableViewSection id="zYX-Z7-HMP">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="OWZ-75-AP8">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="OWZ-75-AP8">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OWZ-75-AP8" id="Ahn-9k-57r">
@@ -1527,7 +1527,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="bMK-DN-lb3">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="bMK-DN-lb3">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bMK-DN-lb3" id="w60-IP-Hmu">
@@ -1643,7 +1643,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="6Pe-0Z-zaY">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="6Pe-0Z-zaY">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Pe-0Z-zaY" id="QtU-2H-4dK">
@@ -1760,7 +1760,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="5T8-ZM-zgq">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="5T8-ZM-zgq">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5T8-ZM-zgq" id="ahq-vQ-Q1o">
@@ -1874,7 +1874,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="etV-NA-0cp">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="etV-NA-0cp">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="etV-NA-0cp" id="ftG-vJ-cGf">
@@ -1986,7 +1986,7 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="zHx-kV-zCc">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cell" rowHeight="80" id="zHx-kV-zCc">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zHx-kV-zCc" id="rzr-iJ-9Xs">
@@ -2098,6 +2098,65 @@
                                             </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="73" id="yDX-yW-Uit">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yDX-yW-Uit" id="ubP-Qb-buB">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kr3-RE-oVi">
+                                                    <rect key="frame" x="120" y="15" width="440" height="30"/>
+                                                    <color key="backgroundColor" red="0.81960784310000001" green="0.25882352939999997" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="0wf-Vj-AL8"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Log out">
+                                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="0wf-Vj-AL8"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="heightClass=regular-widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="0wf-Vj-AL8"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="dismissController:" destination="ki2-TD-eHv" eventType="touchUpInside" id="kdg-OU-Pfp"/>
+                                                        <action selector="logOut:" destination="8hu-HR-oTq" eventType="touchUpInside" id="tCd-SG-u50"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Kr3-RE-oVi" firstAttribute="bottom" secondItem="ubP-Qb-buB" secondAttribute="bottomMargin" id="8IV-WA-2U1"/>
+                                                <constraint firstItem="Kr3-RE-oVi" firstAttribute="leading" secondItem="ubP-Qb-buB" secondAttribute="leadingMargin" constant="92" id="JfH-Fb-0r6"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Kr3-RE-oVi" secondAttribute="trailing" constant="92" id="vc1-hS-uKf"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Kr3-RE-oVi"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="8IV-WA-2U1"/>
+                                                    <exclude reference="JfH-Fb-0r6"/>
+                                                    <exclude reference="vc1-hS-uKf"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Kr3-RE-oVi"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="8IV-WA-2U1"/>
+                                                    <include reference="JfH-Fb-0r6"/>
+                                                    <include reference="vc1-hS-uKf"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -2107,12 +2166,14 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="btn_logOut" destination="Kr3-RE-oVi" id="KEb-Bj-3c7"/>
                         <segue destination="QmR-Ad-xDJ" kind="custom" identifier="profile" customClass="AMSlideMenuContentSegue" id="Rkf-ZE-3W2"/>
                         <segue destination="P3o-1t-SbS" kind="custom" identifier="QR" customClass="AMSlideMenuContentSegue" id="NAg-o9-D7I"/>
                         <segue destination="B0n-Up-1lj" kind="custom" identifier="contacts" customClass="AMSlideMenuContentSegue" id="Nub-4z-d5W"/>
                         <segue destination="I2k-Lg-sNV" kind="custom" identifier="chat" customClass="AMSlideMenuContentSegue" id="45N-Bw-CqS"/>
                         <segue destination="1ao-8O-Owv" kind="custom" identifier="locate" customClass="AMSlideMenuContentSegue" id="Tyf-Pv-ysj"/>
                         <segue destination="BCb-Nu-xdP" kind="custom" identifier="roulette" customClass="AMSlideMenuContentSegue" id="yeH-yY-ubo"/>
+                        <segue destination="vXZ-lx-hvc" kind="show" id="cF2-5d-ddC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRZ-cN-H9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -5228,8 +5289,9 @@
         <image name="userNoBorder.png" width="160" height="160"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="c7Z-0z-GTg"/>
+        <segue reference="cF2-5d-ddC"/>
         <segue reference="Y6V-is-k6s"/>
         <segue reference="H7L-wD-7dF"/>
-        <segue reference="c7Z-0z-GTg"/>
     </inferredMetricsTieBreakers>
 </document>
