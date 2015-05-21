@@ -147,39 +147,54 @@
 
 #pragma mark - actionSheet
 
--(void)changeImage{
-    
-    
+-(void)changeImage
+{
     // Create actionSheet
     
-    UIActionSheet *aSheet = [[UIActionSheet alloc] initWithTitle:@"Select an option"
-                                                        delegate:self
-                                               cancelButtonTitle:@"Cancel"
-                                          destructiveButtonTitle:nil
-                                               otherButtonTitles:@"Camera",@"Photo Library", nil];
+    UIAlertController *cAlert = [UIAlertController alertControllerWithTitle:@"Select an option" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
+    UIAlertAction *aCancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
     
-    [aSheet showInView:self.view];
+    UIAlertAction *aCamera = [UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [self showImagePickerForSource:@"camera"];
+        
+    }];
     
+    UIAlertAction *aPhotoLibrary = [UIAlertAction actionWithTitle:@"Photo library" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [self showImagePickerForSource:@"photoLibrary"];
+        
+    }];
     
+    [cAlert addAction:aCancel];
+    [cAlert addAction:aCamera];
+    [cAlert addAction:aPhotoLibrary];
     
+    [self presentViewController:cAlert animated:YES completion:nil];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+-(void)emailAlreadyUsed
 {
-    switch (buttonIndex)
-    {
-        case 0:
-            [self showImagePickerForSource:@"camera"];
-            break;
-            
-        case 1:
-            [self showImagePickerForSource:@"photoLibrary"];
-            break;
-            
-        default:
-            break;
-    }
+    // Create actionSheet
+    
+    UIAlertController *cAlert = [UIAlertController alertControllerWithTitle:nil message:@"This email is already taken" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *aCancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    UIAlertAction *aChangeEmail = [UIAlertAction actionWithTitle:@"Change email" style:UIAlertActionStyleDefault handler:nil];
+    
+    UIAlertAction *aLogIn = [UIAlertAction actionWithTitle:@"Log in" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [self goBack];
+    }];
+    
+    [cAlert addAction:aCancel];
+    [cAlert addAction:aChangeEmail];
+    [cAlert addAction:aLogIn];
+    
+    
+    [self presentViewController:cAlert animated:YES completion:nil];
 }
 
 
@@ -230,9 +245,6 @@
     UIImage *pickerImage = [info objectForKey:UIImagePickerControllerEditedImage];
     
     // lets resize the image to avoid memory warnings
-    
-    // Get the actually iPhone Size
-    CGFloat screenScale = [[UIScreen mainScreen] scale];
     
     CGSize size = CGSizeMake(400, 400);
     
@@ -368,7 +380,7 @@
     //Parse work
     
     PFUser *newUser = [PFUser user];
-    PFFile *imageFile = [PFFile fileWithData:UIImagePNGRepresentation(self.userImage)];
+    
     
     newUser.username = self.txt_email.text;
     newUser.email = self.txt_email.text;
@@ -377,7 +389,13 @@
     newUser[@"gender"] = self.txt_gender.text;
     newUser[@"name"] = self.txt_name.text;
     newUser[@"surname"] = self.txt_surname.text;
-    newUser[@"image"] = imageFile;
+    
+    if (self.userImage != nil)
+    {
+        PFFile *imageFile = [PFFile fileWithData:UIImagePNGRepresentation(self.userImage)];
+        newUser[@"image"] = imageFile;
+    }
+    
     
     
     [newUser signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -393,7 +411,18 @@
         }
         else
         {
-            NSLog(@"Error");
+            NSNumber *eCode = [error.userInfo objectForKey:@"code"];
+            //NSString *eMesssage = [error.userInfo objectForKey:@"error"];
+            
+            if (eCode.integerValue == 202)
+            {
+                //Email already exist
+                [viewProgress closePopUp];
+                
+                [viewProgress removeFromSuperview];
+                
+                [self emailAlreadyUsed];
+            }
         }
         
     }];
@@ -401,6 +430,8 @@
     
     
 }
+
+
 
 
 - (void)goBack

@@ -34,6 +34,8 @@
     
     // NSUSERDEFAULTS
     
+    /*
+    
     NSUserDefaults *userDefautls = [NSUserDefaults standardUserDefaults];
     
     NSNumber *introSeen = [userDefautls objectForKey:@"introSeen"];
@@ -45,6 +47,8 @@
         
         self.window.rootViewController=rootController;
     }
+     
+     */
     
     return YES;
 }

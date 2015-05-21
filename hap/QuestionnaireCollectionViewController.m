@@ -362,14 +362,15 @@
 
 -(void)calculatePersonality
 {
-    if (self.n >= 0 && self.n <= 6)
+    if (self.e >= 0 && self.e <= 6)
     {
-        if (self.n >= 0 && self.n <= 12 )
+        if (self.n >= 0 && self.n <= 12)
         {
             self.personality = @"Altamente Flematico";
             self.neurotype = @"F";
         }
-        else
+        
+        if (self.n >= 16 && self.n <= 24)
         {
             self.personality = @"Altamente Sanguineo";
             self.neurotype = @"S";
@@ -377,7 +378,7 @@
         
     }
     
-    if (self.n >= 7 && self.n <= 11)
+    if (self.e >= 7 && self.e <= 11)
     {
         if (self.n >= 0 && self.n <= 9 )
         {
@@ -405,7 +406,7 @@
         
     }
     
-    if (self.n >= 13 && self.n <= 17)
+    if (self.e >= 13 && self.e <= 17)
     {
         if (self.n >= 0 && self.n <= 9 )
         {
@@ -433,14 +434,15 @@
         
     }
     
-    if (self.n >= 18 && self.n <= 24)
+    if (self.e >= 18 && self.e <= 24)
     {
         if (self.n >= 0 && self.n <= 12 )
         {
             self.personality = @"Altamente Melancolico";
             self.neurotype = @"M";
         }
-        else
+        
+        if (self.n >= 13 && self.n <= 24)
         {
             self.personality = @"Altamente Colerico";
             self.neurotype = @"C";
