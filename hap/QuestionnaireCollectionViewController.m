@@ -240,17 +240,7 @@
 
 - (void)QuestionCollectionViewCellDidTouchYesWithCell:(QuestionCollectionViewCell *)cell
 {
-    if (cell.value.boolValue == YES)
-    {
-        if([cell.letter isEqualToString:@"E"])
-        {
-            self.e++;
-        }
-        else
-        {
-            self.n++;
-        }
-    }
+    [self saveAnswer:YES WithCell:cell];
     
     NSIndexPath *currentItem = [self.collectionView indexPathForCell:cell];
     
@@ -258,7 +248,7 @@
     {
         NSIndexPath *nextItem = [NSIndexPath indexPathForItem:currentItem.item + 1 inSection:currentItem.section];
         
-        [self.topView moveToQuestiong:currentItem.row];
+        [self.topView moveToQuestion:(int)currentItem.row];
         
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:nextItem.item inSection:0]
                                     atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
@@ -266,29 +256,7 @@
     else
     {
         
-        // calculate personality
-        [self calculatePersonality];
-        
-        // Save result in Parse
-        PFUser *user = [PFUser currentUser];
-        user[@"personality"] = self.personality;
-        [user saveInBackground];
-        
-        // open Pop up
-        
-        UIView *backView = [[UIView alloc] initWithFrame:self.view.bounds];
-        
-        QuestionnairePopUpView *PopUp = [[QuestionnairePopUpView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 50, self.view.bounds.size.height - 10)
-                                                                            transform:CGAffineTransformMakeScale(1.4, 1.4)
-                                                                       backgroundView:backView
-                                                                  backgroundViewColor:[UIColor blackColor]
-                                                                  backgroundViewAlpha:0.6
-                                                                            superView:self.view];
-        
-        PopUp.delegate = self;
-        
-        
-        [PopUp openPopUp];
+        [self saveQuestionnaireToParse];
     }
     
     
@@ -296,17 +264,7 @@
 
 - (void)QuestionCollectionViewCellDidTouchNoWithCell:(QuestionCollectionViewCell *)cell
 {
-    if (cell.value.boolValue == NO)
-    {
-        if([cell.letter isEqualToString:@"E"])
-        {
-            self.e++;
-        }
-        else
-        {
-            self.n++;
-        }
-    }
+    [self saveAnswer:NO WithCell:cell];
     
     NSIndexPath *currentItem = [self.collectionView indexPathForCell:cell];
     
@@ -315,7 +273,7 @@
         
         NSIndexPath *nextItem = [NSIndexPath indexPathForItem:currentItem.item + 1 inSection:currentItem.section];
         
-        [self.topView moveToQuestiong:currentItem.row];
+        [self.topView moveToQuestion:(int)currentItem.row];
         
         [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:nextItem.item inSection:0]
                                     atScrollPosition:UICollectionViewScrollPositionCenteredHorizontally animated:YES];
@@ -323,32 +281,67 @@
     else
     {
         
-        // calculate personality
-        [self calculatePersonality];
-        
-        // Save result in Parse
-        PFUser *user = [PFUser currentUser];
-        user[@"personality"] = self.personality;
-        user[@"neurotype"] = self.neurotype;
-        [user saveInBackground];
-        
-        // Show pop Up
-        
-        
-        UIView *backView = [[UIView alloc] initWithFrame:self.view.bounds];
-        
-        QuestionnairePopUpView *PopUp = [[QuestionnairePopUpView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 50, self.view.bounds.size.height - 80)
-                                                                            transform:CGAffineTransformMakeScale(1.4, 1.4)
-                                                                       backgroundView:backView
-                                                                  backgroundViewColor:[UIColor blackColor]
-                                                                  backgroundViewAlpha:0.6
-                                                                            superView:self.view];
-        
-        PopUp.delegate = self;
-        
-        
-        [PopUp openPopUp];
+        [self saveQuestionnaireToParse];
     }
+}
+
+
+-(void)saveAnswer:(BOOL)answer WithCell:(QuestionCollectionViewCell *)cell
+{
+    if (cell.value.boolValue == YES && answer == YES)
+    {
+        if([cell.letter isEqualToString:@"E"])
+        {
+            self.e++;
+        }
+        
+        if([cell.letter isEqualToString:@"N"])
+        {
+            self.n++;
+        }
+    }
+    
+    if (cell.value.boolValue == NO && answer == NO)
+    {
+        if([cell.letter isEqualToString:@"E"])
+        {
+            self.e++;
+        }
+        
+        if([cell.letter isEqualToString:@"N"])
+        {
+            self.n++;
+        }
+    }
+}
+
+-(void)saveQuestionnaireToParse
+{
+    // calculate personality
+    [self calculatePersonality];
+    
+    // Save result in Parse
+    PFUser *user = [PFUser currentUser];
+    user[@"personality"] = self.personality;
+    user[@"neurotype"] = self.neurotype;
+    [user saveInBackground];
+    
+    // Show pop Up
+    
+    
+    UIView *backView = [[UIView alloc] initWithFrame:self.view.bounds];
+    
+    QuestionnairePopUpView *PopUp = [[QuestionnairePopUpView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 50, self.view.bounds.size.height - 80)
+                                                                        transform:CGAffineTransformMakeScale(1.4, 1.4)
+                                                                   backgroundView:backView
+                                                              backgroundViewColor:[UIColor blackColor]
+                                                              backgroundViewAlpha:0.6
+                                                                        superView:self.view];
+    
+    PopUp.delegate = self;
+    
+    
+    [PopUp openPopUp];
 }
 
 #pragma mark - PopUp Delegate

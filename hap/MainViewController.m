@@ -101,7 +101,7 @@
                                                 
                                                 NSString *neurotype = user[@"neurotype"];
                                                 
-                                                if ([neurotype isEqualToString:@""])
+                                                if (neurotype == nil || [neurotype isEqualToString:@""])
                                                 {
                                                     [self performSegueWithIdentifier:@"questionnaire" sender:self];
                                                 }

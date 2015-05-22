@@ -20,6 +20,6 @@
 
 
 -(void)startPosition;
--(void)moveToQuestiong:(int)question;
+-(void)moveToQuestion:(int)question;
 
 @end

@@ -48,7 +48,7 @@
     self.lbl_percentage.text = @"0%";
 }
 
--(void)moveToQuestiong:(int)question
+-(void)moveToQuestion:(int)question
 {
     int percentage = ((question*100)/47);
     
