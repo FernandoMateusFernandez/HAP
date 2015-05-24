@@ -25,7 +25,10 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "AMSlideMenuMainViewController.h"
+#import <Parse/Parse.h>
 
 @interface MainVC : AMSlideMenuMainViewController
+
+@property (strong, nonatomic) PFUser *profileUser;
 
 @end

@@ -25,10 +25,13 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "AMSlideMenuLeftTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface LeftMenuVC : AMSlideMenuLeftTableViewController
 
 @property (weak, nonatomic) IBOutlet UIButton *btn_logOut;
 - (IBAction)logOut:(id)sender;
+
+@property (strong, nonatomic) PFUser *profileUser;
 
 @end

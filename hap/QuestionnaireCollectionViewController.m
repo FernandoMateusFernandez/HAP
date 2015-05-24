@@ -9,6 +9,7 @@
 #import "QuestionnaireCollectionViewController.h"
 #import "TopViewController.h"
 #import "QuestionnairePopUpView.h"
+#import "ProfileCollectionViewController.h"
 
 @interface QuestionnaireCollectionViewController ()
 
@@ -288,6 +289,7 @@
 
 -(void)saveAnswer:(BOOL)answer WithCell:(QuestionCollectionViewCell *)cell
 {
+    
     if (cell.value.boolValue == YES && answer == YES)
     {
         if([cell.letter isEqualToString:@"E"])
@@ -365,7 +367,7 @@
         
         if (self.n >= 16 && self.n <= 24)
         {
-            self.personality = @"Altamente Sanguineo";
+            self.personality = @"Altamente Melancolico";
             self.neurotype = @"S";
         }
         
@@ -387,13 +389,13 @@
         
         if (self.n >= 13 && self.n <= 15 )
         {
-            self.personality = @"Sanguineo";
+            self.personality = @"Melancolico";
             self.neurotype = @"S";
         }
         
         if (self.n >= 16 && self.n <= 24 )
         {
-            self.personality = @"Altamente Sanguineo";
+            self.personality = @"Altamente Melancolico";
             self.neurotype = @"S";
         }
         
@@ -403,13 +405,13 @@
     {
         if (self.n >= 0 && self.n <= 9 )
         {
-            self.personality = @"Altamente Melancolico";
+            self.personality = @"Altamente Sanguineo";
             self.neurotype = @"M";
         }
         
         if (self.n >= 10 && self.n <= 12 )
         {
-            self.personality = @"Melancolico";
+            self.personality = @"Sanguineo";
             self.neurotype = @"M";
         }
         
@@ -431,7 +433,7 @@
     {
         if (self.n >= 0 && self.n <= 12 )
         {
-            self.personality = @"Altamente Melancolico";
+            self.personality = @"Altamente Sanguineo";
             self.neurotype = @"M";
         }
         
@@ -451,7 +453,9 @@
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
 
+     ProfileCollectionViewController *cProfile = [segue destinationViewController];
      
+     cProfile.profileUser = [PFUser currentUser];
  }
 
 @end

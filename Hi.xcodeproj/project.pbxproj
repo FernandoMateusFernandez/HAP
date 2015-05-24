@@ -30,7 +30,11 @@
 		892AEFEB1AAB564100FA906B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892AEFEA1AAB564100FA906B /* SystemConfiguration.framework */; };
 		892AEFED1AAB564900FA906B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 892AEFEC1AAB564900FA906B /* libz.dylib */; };
 		892AEFEF1AAB565000FA906B /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 892AEFEE1AAB565000FA906B /* libsqlite3.dylib */; };
+		89335BD81B11043500E4F5A6 /* FindUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89335BD71B11043500E4F5A6 /* FindUserTableViewCell.m */; };
+		89335BDB1B11044200E4F5A6 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89335BDA1B11044200E4F5A6 /* UserTableViewCell.m */; };
 		89373F661B0AD10600A36A1D /* backArrowLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 89373F651B0AD10600A36A1D /* backArrowLine.png */; };
+		89D31A9F1B10F6E7004875ED /* FindContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D31A9E1B10F6E7004875ED /* FindContactTableViewController.m */; };
+		89D31AA21B10FA3B004875ED /* AffinityCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D31AA11B10FA3B004875ED /* AffinityCenter.m */; };
 		89ED01431B0AE50D00225C4E /* intro_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89ED013E1B0AE50D00225C4E /* intro_2.jpg */; };
 		89ED01441B0AE50D00225C4E /* intro_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89ED013F1B0AE50D00225C4E /* intro_1.jpg */; };
 		89ED01451B0AE50D00225C4E /* intro_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89ED01401B0AE50D00225C4E /* intro_4.jpg */; };
@@ -167,7 +171,15 @@
 		892AEFEA1AAB564100FA906B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		892AEFEC1AAB564900FA906B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		892AEFEE1AAB565000FA906B /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		89335BD61B11043500E4F5A6 /* FindUserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindUserTableViewCell.h; path = hap/FindUserTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		89335BD71B11043500E4F5A6 /* FindUserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindUserTableViewCell.m; path = hap/FindUserTableViewCell.m; sourceTree = SOURCE_ROOT; };
+		89335BD91B11044200E4F5A6 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTableViewCell.h; path = hap/UserTableViewCell.h; sourceTree = SOURCE_ROOT; };
+		89335BDA1B11044200E4F5A6 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTableViewCell.m; path = hap/UserTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		89373F651B0AD10600A36A1D /* backArrowLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrowLine.png; sourceTree = "<group>"; };
+		89D31A9D1B10F6E7004875ED /* FindContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindContactTableViewController.h; path = hap/FindContactTableViewController.h; sourceTree = SOURCE_ROOT; };
+		89D31A9E1B10F6E7004875ED /* FindContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindContactTableViewController.m; path = hap/FindContactTableViewController.m; sourceTree = SOURCE_ROOT; };
+		89D31AA01B10FA3B004875ED /* AffinityCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AffinityCenter.h; path = hap/AffinityCenter.h; sourceTree = SOURCE_ROOT; };
+		89D31AA11B10FA3B004875ED /* AffinityCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AffinityCenter.m; path = hap/AffinityCenter.m; sourceTree = SOURCE_ROOT; };
 		89ED013E1B0AE50D00225C4E /* intro_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_2.jpg; sourceTree = "<group>"; };
 		89ED013F1B0AE50D00225C4E /* intro_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_1.jpg; sourceTree = "<group>"; };
 		89ED01401B0AE50D00225C4E /* intro_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = intro_4.jpg; sourceTree = "<group>"; };
@@ -361,6 +373,8 @@
 			children = (
 				890D2C301B0A5D6400170012 /* InterestEqualObject.h */,
 				890D2C311B0A5D6400170012 /* InterestEqualObject.m */,
+				89D31AA01B10FA3B004875ED /* AffinityCenter.h */,
+				89D31AA11B10FA3B004875ED /* AffinityCenter.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -396,6 +410,7 @@
 		892AEFA41AAB521D00FA906B /* HAP */ = {
 			isa = PBXGroup;
 			children = (
+				89D31A9C1B10F6CD004875ED /* FindContact */,
 				890D2C2F1B0A5D4700170012 /* Classes */,
 				D2F47CDA1B092276001F4E03 /* Result */,
 				D2F47CB41B084892001F4E03 /* QR */,
@@ -490,6 +505,27 @@
 			children = (
 			);
 			name = Facebook;
+			sourceTree = "<group>";
+		};
+		89335BD51B11041600E4F5A6 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				89335BD61B11043500E4F5A6 /* FindUserTableViewCell.h */,
+				89335BD71B11043500E4F5A6 /* FindUserTableViewCell.m */,
+				89335BD91B11044200E4F5A6 /* UserTableViewCell.h */,
+				89335BDA1B11044200E4F5A6 /* UserTableViewCell.m */,
+			);
+			name = cells;
+			sourceTree = "<group>";
+		};
+		89D31A9C1B10F6CD004875ED /* FindContact */ = {
+			isa = PBXGroup;
+			children = (
+				89335BD51B11041600E4F5A6 /* cells */,
+				89D31A9D1B10F6E7004875ED /* FindContactTableViewController.h */,
+				89D31A9E1B10F6E7004875ED /* FindContactTableViewController.m */,
+			);
+			name = FindContact;
 			sourceTree = "<group>";
 		};
 		89ED01481B0AE51100225C4E /* Splash */ = {
@@ -996,6 +1032,7 @@
 				D2BEE44D1B07A4BC0087E842 /* AMSlideMenuMainViewController.m in Sources */,
 				D2BEE3D71B03CDBE0087E842 /* HAPSpinnerViewController.m in Sources */,
 				890D2C321B0A5D6400170012 /* InterestEqualObject.m in Sources */,
+				89D31A9F1B10F6E7004875ED /* FindContactTableViewController.m in Sources */,
 				892AEFCD1AAB534A00FA906B /* MainViewController.m in Sources */,
 				D2DE24301B07DA6100A1516B /* ProfileRightSlidingMenu.m in Sources */,
 				D2BEE3E01B03CDF50087E842 /* UIColor+flat.m in Sources */,
@@ -1012,9 +1049,11 @@
 				D2BEE3F81B0404160087E842 /* ProfileCollectionViewCell.m in Sources */,
 				D28A192E1B01000E00D671B1 /* SplashViewController.m in Sources */,
 				D2DE24451B081E1800A1516B /* UIImage+Alpha.m in Sources */,
+				89D31AA21B10FA3B004875ED /* AffinityCenter.m in Sources */,
 				D2BEE44C1B07A4BC0087E842 /* AMSlideMenuLeftTableViewController.m in Sources */,
 				D2BEE4001B0414540087E842 /* InterestProfileCollectionViewCell.m in Sources */,
 				D2BEE3A51B0230870087E842 /* InterestsCollectionViewController.m in Sources */,
+				89335BD81B11043500E4F5A6 /* FindUserTableViewCell.m in Sources */,
 				892AEFA81AAB521D00FA906B /* main.m in Sources */,
 				890D2C2C1B0983BE00170012 /* ProgressIndicatorView.m in Sources */,
 				D2DE24461B081E1800A1516B /* UIImage+Resize.m in Sources */,
@@ -1034,6 +1073,7 @@
 				D2BEE44B1B07A4BC0087E842 /* AMSlideMenuLeftMenuSegue.m in Sources */,
 				D2F47CC01B0853A5001F4E03 /* QRReaderViewController.m in Sources */,
 				D28A192B1B00FEFD00D671B1 /* RootViewController.m in Sources */,
+				89335BDB1B11044200E4F5A6 /* UserTableViewCell.m in Sources */,
 				D2BEE4501B07A4BC0087E842 /* UIViewController+AMSlideMenu.m in Sources */,
 				D2F47CDD1B09228D001F4E03 /* ResultTableViewController.m in Sources */,
 				D2F47CBB1B085128001F4E03 /* MenuQRViewController.m in Sources */,

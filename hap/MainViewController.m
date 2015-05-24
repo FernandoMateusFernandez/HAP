@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import <Parse/Parse.h>
 #import "ProgressIndicatorView.h"
+#import "MainVC.h"
 
 @interface MainViewController ()
 
@@ -40,15 +41,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 #pragma mark - TextField
 
@@ -119,4 +113,26 @@
          
     return YES;
 }
+
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+    
+    
+    if ([segue.identifier isEqualToString:@"profile"])
+    {
+        MainVC *cMain = [segue destinationViewController];
+        
+        PFUser *user = [PFUser currentUser];
+        
+        cMain.profileUser = user;
+    }
+    
+    
+}
+
+
 @end

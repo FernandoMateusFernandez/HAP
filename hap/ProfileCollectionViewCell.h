@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_personality;
 @property (weak, nonatomic) IBOutlet UIView *viewAverageView;
 @property (weak, nonatomic) IBOutlet UIView *viewChartView;
+@property (weak, nonatomic) IBOutlet UIButton *btn_addUser;
 
 @property (strong, nonatomic) id<ProfileCollectionViewCellDelegate>delegate;
 @end

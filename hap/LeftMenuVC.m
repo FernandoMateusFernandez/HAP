@@ -25,7 +25,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "LeftMenuVC.h"
-#import <Parse/Parse.h>
+#import "ProfileCollectionViewController.h"
 
 @interface LeftMenuVC()
 
@@ -81,5 +81,17 @@
         [PFUser logOut];
     });
     
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"profile"])
+    {
+        UINavigationController *cNav = [segue destinationViewController];
+        
+        ProfileCollectionViewController *cProfile = (ProfileCollectionViewController *)[cNav topViewController];
+        
+        cProfile.profileUser = self.profileUser;
+    }
 }
 @end

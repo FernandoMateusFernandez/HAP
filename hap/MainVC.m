@@ -25,6 +25,7 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "MainVC.h"
+#import "LeftMenuVC.h"
 
 @interface MainVC ()
 
@@ -187,6 +188,20 @@
 - (CGFloat)maxDarknessWhileRightMenu
 {
     return 0;
+}
+
+#pragma mark - navigation
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"leftMenu"])
+    {
+        LeftMenuVC *cLeftMenu = [segue destinationViewController];
+        
+        cLeftMenu.profileUser = self.profileUser;
+    }
+    
 }
 
 @end

@@ -79,7 +79,6 @@ static NSString * const reuseIdentifier = @"Cell";
     [self.collectionView performBatchUpdates:^{
         
         
-        
         for (int i = 0; i < self.aInterests.count; i++)
         {
             NSIndexPath *indexPath = [NSIndexPath indexPathForItem:i+1 inSection:1];
@@ -164,7 +163,7 @@ static NSString * const reuseIdentifier = @"Cell";
             ProfileCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"profileCell" forIndexPath:indexPath];
             
             
-            PFUser *user = [PFUser currentUser];
+            PFUser *user = self.profileUser;
             
             PFFile *imageFile = user[@"image"];
             
@@ -331,7 +330,7 @@ static NSString * const reuseIdentifier = @"Cell";
     
     [self dismissViewControllerAnimated:YES completion:^{
         
-        PFUser *currentUser = [PFUser currentUser];
+        PFUser *currentUser = self.profileUser;
         
         PFFile *imageFile = [PFFile fileWithData:UIImagePNGRepresentation(self.userImage)];
         
