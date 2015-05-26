@@ -19,7 +19,6 @@
 
 @property (strong, nonatomic) PFUser *profileUser;
 @property (strong, nonatomic) NSString *segueOrigin;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *btnNav_cancel;
 
 
 @end

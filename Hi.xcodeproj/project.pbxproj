@@ -34,6 +34,10 @@
 		89335BDB1B11044200E4F5A6 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89335BDA1B11044200E4F5A6 /* UserTableViewCell.m */; };
 		89373F661B0AD10600A36A1D /* backArrowLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 89373F651B0AD10600A36A1D /* backArrowLine.png */; };
 		894713081B1413B7009B9BF2 /* iPhoneSpects.m in Sources */ = {isa = PBXBuildFile; fileRef = 894713071B1413B7009B9BF2 /* iPhoneSpects.m */; };
+		8947130E1B14AFCE009B9BF2 /* UserInfoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8947130D1B14AFCE009B9BF2 /* UserInfoCollectionViewController.m */; };
+		894713121B14B22F009B9BF2 /* UserInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 894713111B14B22F009B9BF2 /* UserInfoCollectionViewCell.m */; };
+		894713151B14B247009B9BF2 /* InterestUserInfoHeaderCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 894713141B14B247009B9BF2 /* InterestUserInfoHeaderCollectionViewCell.m */; };
+		894713181B14B257009B9BF2 /* InterestUserInfoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 894713171B14B257009B9BF2 /* InterestUserInfoCollectionViewCell.m */; };
 		89D31A9F1B10F6E7004875ED /* FindContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D31A9E1B10F6E7004875ED /* FindContactTableViewController.m */; };
 		89D31AA21B10FA3B004875ED /* AffinityCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D31AA11B10FA3B004875ED /* AffinityCenter.m */; };
 		89ED01431B0AE50D00225C4E /* intro_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89ED013E1B0AE50D00225C4E /* intro_2.jpg */; };
@@ -179,6 +183,14 @@
 		89373F651B0AD10600A36A1D /* backArrowLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrowLine.png; sourceTree = "<group>"; };
 		894713061B1413B7009B9BF2 /* iPhoneSpects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iPhoneSpects.h; path = hap/iPhoneSpects.h; sourceTree = SOURCE_ROOT; };
 		894713071B1413B7009B9BF2 /* iPhoneSpects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iPhoneSpects.m; path = hap/iPhoneSpects.m; sourceTree = SOURCE_ROOT; };
+		8947130C1B14AFCE009B9BF2 /* UserInfoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoCollectionViewController.h; path = hap/UserInfoCollectionViewController.h; sourceTree = SOURCE_ROOT; };
+		8947130D1B14AFCE009B9BF2 /* UserInfoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoCollectionViewController.m; path = hap/UserInfoCollectionViewController.m; sourceTree = SOURCE_ROOT; };
+		894713101B14B22F009B9BF2 /* UserInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoCollectionViewCell.h; path = hap/UserInfoCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		894713111B14B22F009B9BF2 /* UserInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoCollectionViewCell.m; path = hap/UserInfoCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		894713131B14B247009B9BF2 /* InterestUserInfoHeaderCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InterestUserInfoHeaderCollectionViewCell.h; path = hap/InterestUserInfoHeaderCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		894713141B14B247009B9BF2 /* InterestUserInfoHeaderCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InterestUserInfoHeaderCollectionViewCell.m; path = hap/InterestUserInfoHeaderCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		894713161B14B257009B9BF2 /* InterestUserInfoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InterestUserInfoCollectionViewCell.h; path = hap/InterestUserInfoCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		894713171B14B257009B9BF2 /* InterestUserInfoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InterestUserInfoCollectionViewCell.m; path = hap/InterestUserInfoCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
 		89D31A9D1B10F6E7004875ED /* FindContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindContactTableViewController.h; path = hap/FindContactTableViewController.h; sourceTree = SOURCE_ROOT; };
 		89D31A9E1B10F6E7004875ED /* FindContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindContactTableViewController.m; path = hap/FindContactTableViewController.m; sourceTree = SOURCE_ROOT; };
 		89D31AA01B10FA3B004875ED /* AffinityCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AffinityCenter.h; path = hap/AffinityCenter.h; sourceTree = SOURCE_ROOT; };
@@ -512,7 +524,7 @@
 			name = Facebook;
 			sourceTree = "<group>";
 		};
-		89335BD51B11041600E4F5A6 /* cells */ = {
+		89335BD51B11041600E4F5A6 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
 				89335BD61B11043500E4F5A6 /* FindUserTableViewCell.h */,
@@ -520,15 +532,31 @@
 				89335BD91B11044200E4F5A6 /* UserTableViewCell.h */,
 				89335BDA1B11044200E4F5A6 /* UserTableViewCell.m */,
 			);
-			name = cells;
+			name = TableViewCells;
+			sourceTree = "<group>";
+		};
+		8947130F1B14B1F1009B9BF2 /* CollectionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				894713101B14B22F009B9BF2 /* UserInfoCollectionViewCell.h */,
+				894713111B14B22F009B9BF2 /* UserInfoCollectionViewCell.m */,
+				894713131B14B247009B9BF2 /* InterestUserInfoHeaderCollectionViewCell.h */,
+				894713141B14B247009B9BF2 /* InterestUserInfoHeaderCollectionViewCell.m */,
+				894713161B14B257009B9BF2 /* InterestUserInfoCollectionViewCell.h */,
+				894713171B14B257009B9BF2 /* InterestUserInfoCollectionViewCell.m */,
+			);
+			name = CollectionViewCells;
 			sourceTree = "<group>";
 		};
 		89D31A9C1B10F6CD004875ED /* FindContact */ = {
 			isa = PBXGroup;
 			children = (
-				89335BD51B11041600E4F5A6 /* cells */,
+				8947130F1B14B1F1009B9BF2 /* CollectionViewCells */,
+				89335BD51B11041600E4F5A6 /* TableViewCells */,
 				89D31A9D1B10F6E7004875ED /* FindContactTableViewController.h */,
 				89D31A9E1B10F6E7004875ED /* FindContactTableViewController.m */,
+				8947130C1B14AFCE009B9BF2 /* UserInfoCollectionViewController.h */,
+				8947130D1B14AFCE009B9BF2 /* UserInfoCollectionViewController.m */,
 			);
 			name = FindContact;
 			sourceTree = "<group>";
@@ -1069,10 +1097,12 @@
 				D217682B1B01547F00E3CE67 /* QuestionCollectionViewCell.m in Sources */,
 				D2BEE3FB1B0404270087E842 /* InterestsHeaderCollectionViewCell.m in Sources */,
 				D2BEE3F51B0404040087E842 /* ProfileCollectionViewController.m in Sources */,
+				8947130E1B14AFCE009B9BF2 /* UserInfoCollectionViewController.m in Sources */,
 				D2F47CB71B0848B8001F4E03 /* QRImageViewController.m in Sources */,
 				D2BEE3DD1B03CDDB0087E842 /* FeTenDot.m in Sources */,
 				D2BEE42E1B06967D0087E842 /* QuestionnairePopUpView.m in Sources */,
 				890D2C361B0A9B3900170012 /* HeaderCollectionViewCell.m in Sources */,
+				894713181B14B257009B9BF2 /* InterestUserInfoCollectionViewCell.m in Sources */,
 				D2BEE44F1B07A4BC0087E842 /* AMSlideMenuRightTableViewController.m in Sources */,
 				D2F47CE71B09704F001F4E03 /* ShareTableViewCell.m in Sources */,
 				D2BEE44B1B07A4BC0087E842 /* AMSlideMenuLeftMenuSegue.m in Sources */,
@@ -1086,7 +1116,9 @@
 				D2BEE4381B07A3950087E842 /* ContactsTableViewController.m in Sources */,
 				D2F47CE11B097026001F4E03 /* ResultTableViewCell.m in Sources */,
 				894713081B1413B7009B9BF2 /* iPhoneSpects.m in Sources */,
+				894713151B14B247009B9BF2 /* InterestUserInfoHeaderCollectionViewCell.m in Sources */,
 				D2F47CC31B0853EA001F4E03 /* TTMQRCodeReader.m in Sources */,
+				894713121B14B22F009B9BF2 /* UserInfoCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
