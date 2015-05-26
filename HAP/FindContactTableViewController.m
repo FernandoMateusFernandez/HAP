@@ -101,6 +101,40 @@
     }
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            CGSize itemSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+            return itemSize;
+            
+            break;
+        }
+            
+        case 1:
+        {
+            if (indexPath.row == 0)
+            {
+                CGSize itemSize = CGSizeMake(self.view.frame.size.width, 135);
+                return itemSize;
+            }
+            else
+            {
+                CGSize itemSize = CGSizeMake(self.view.frame.size.width, 40);
+                return itemSize;
+            }
+            break;
+        }
+            
+        default:
+            return CGSizeZero;
+            break;
+    }
+    
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -166,7 +200,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
     
-    UserInfoCollectionViewController *cUserInfo = [segue destinationViewController];
+    UINavigationController *cNav = [segue destinationViewController];
+    
+    
+    
+    UserInfoCollectionViewController *cUserInfo = (UserInfoCollectionViewController *)[cNav topViewController];
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     

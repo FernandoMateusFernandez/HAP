@@ -15,4 +15,6 @@
 
 @property (strong, nonatomic) PFUser *userToShow;
 
+- (IBAction)dissmissController:(id)sender;
+
 @end

@@ -213,11 +213,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark - UserInfo Delegate
 
-- (void)UserInfoCollectionViewCellDidDismissController
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
 /*
  #pragma mark - Navigation
  
@@ -228,4 +223,8 @@ static NSString * const reuseIdentifier = @"Cell";
  }
  */
 
+- (IBAction)dissmissController:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

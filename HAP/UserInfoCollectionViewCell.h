@@ -10,7 +10,7 @@
 
 @protocol UserInfoCollectionViewCellDelegate <NSObject>
 
--(void)UserInfoCollectionViewCellDidDismissController;
+-(void)UserInfoCollectionViewCellAddUser;
 
 @end
 
@@ -21,9 +21,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *img_image;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_contactsCounter;
 @property (weak, nonatomic) IBOutlet UIButton *btn_done;
+@property (weak, nonatomic) IBOutlet UILabel *lbl_affinityPercentage;
 
 @property (strong, nonatomic) id<UserInfoCollectionViewCellDelegate>delegate;
 
-- (IBAction)dismissButton:(id)sender;
+- (IBAction)addContact:(id)sender;
+
 
 @end

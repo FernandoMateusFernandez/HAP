@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
 
 @interface AffinityCenter : NSObject
+
+
++(void)calculateAffinityWithUser:(PFUser *)user
+                         contact:(PFUser *)contact
+                      completion:(void (^)(NSNumber *factor, NSArray *aSimilarInterests))completionHandler;
 
 @end

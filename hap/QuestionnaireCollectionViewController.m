@@ -372,7 +372,7 @@
         if (self.n >= 16 && self.n <= 24)
         {
             self.personality = @"Altamente Melancolico";
-            self.neurotype = @"S";
+            self.neurotype = @"M";
         }
         
     }
@@ -394,13 +394,13 @@
         if (self.n >= 13 && self.n <= 15 )
         {
             self.personality = @"Melancolico";
-            self.neurotype = @"S";
+            self.neurotype = @"M";
         }
         
         if (self.n >= 16 && self.n <= 24 )
         {
             self.personality = @"Altamente Melancolico";
-            self.neurotype = @"S";
+            self.neurotype = @"M";
         }
         
     }

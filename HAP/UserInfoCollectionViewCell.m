@@ -21,11 +21,8 @@
     self.btn_done.layer.cornerRadius = 20;
 }
 
-- (IBAction)dismissButton:(id)sender {
+- (IBAction)addContact:(id)sender {
     
-    
-    [self.delegate UserInfoCollectionViewCellDidDismissController];
-    
-    
+    [self.delegate UserInfoCollectionViewCellAddUser];
 }
 @end

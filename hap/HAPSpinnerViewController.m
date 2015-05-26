@@ -144,6 +144,7 @@
     
     ResultTableViewController *cResult = [segue destinationViewController];
     
+    cResult.user = [PFUser currentUser];
     cResult.contact = self.contact;
 }
 

@@ -16,7 +16,7 @@
     
     if (self != nil)
     {
-        _Interests = interest;
+        _Interest = interest;
         _aTopics = aTopics;
         _percentage = percentage;
     }

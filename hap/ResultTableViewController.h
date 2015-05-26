@@ -11,6 +11,7 @@
 
 @interface ResultTableViewController : UITableViewController
 
+@property (strong, nonatomic) PFUser *user;
 @property (strong, nonatomic) PFUser *contact;
 
 @end

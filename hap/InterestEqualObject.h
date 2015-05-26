@@ -11,7 +11,7 @@
 
 @interface InterestEqualObject : NSObject
 
-@property (strong, nonatomic) PFObject *Interests;
+@property (strong, nonatomic) PFObject *Interest;
 @property (strong, nonatomic) NSArray *aTopics;
 @property (nonatomic) CGFloat percentage;
 
