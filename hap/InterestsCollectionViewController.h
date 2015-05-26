@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "NextCollectionViewCell.h"
 
-@interface InterestsCollectionViewController : UICollectionViewController <NextCollectionViewCellDelegate>
+@interface InterestsCollectionViewController : UICollectionViewController
 
 
 

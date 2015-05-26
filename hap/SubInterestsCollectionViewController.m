@@ -15,9 +15,10 @@
 @property (strong, nonatomic) NSArray *aSubInterests;
 @property (strong, nonatomic) NSMutableArray *aIndexPath;
 @property (strong, nonatomic) NSMutableArray *aInterestsToSave;
+@property (strong, nonatomic) NSMutableArray *aInterestsSelected;
 @property (strong, nonatomic) NSString *currentInterest;
 
-@property (nonatomic) BOOL animating;
+@property (nonatomic) BOOL activityCell;
 
 @property (nonatomic) int counter;
 
@@ -31,7 +32,8 @@
     
     self.aIndexPath = [NSMutableArray new];
     self.aInterestsToSave = [NSMutableArray new];
-    self.animating = YES;
+    self.aInterestsSelected = [NSMutableArray new];
+    self.activityCell = YES;
     
     [self downloadSubInterestFor:[self.aInterest firstObject]];
     self.counter++;
@@ -67,7 +69,7 @@
             self.aSubInterests = objects;
             
             //
-            self.animating = NO;
+            self.activityCell = NO;
             [self.collectionView deleteItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:1 inSection:0]]];
             
             [self insertArrayIntoCollectionView];
@@ -132,7 +134,7 @@
     {
         case 0:
         {
-            if(self.animating == YES)
+            if(self.activityCell == YES)
             {
                 return 2;
             }
@@ -201,7 +203,7 @@
     {
         case 0:
         {
-            if (self.animating == YES)
+            if (self.activityCell == YES)
             {
                 if (indexPath.row == 0)
                 {
@@ -287,23 +289,56 @@
             {
                 cell.img_checkImage.hidden = YES;
                 
+                // Remove item
+                
+                NSNumber *item = @(indexPath.row);
+                
+                [self.aInterestsSelected removeObjectIdenticalTo:item];
+                
                 
             }
             else
             {
                 cell.img_checkImage.hidden = NO;
                 
-                //Proceed
-                PFObject *interest = self.aInterest[self.counter - 1];
-                [interest addUniqueObject:self.aSubInterests[indexPath.row] forKey:@"topics"];
+                // Add item
                 
-                [self.aInterestsToSave addObject:interest];
+                NSNumber *item = @(indexPath.row);
+                
+                [self.aInterestsSelected addObject:item];
+                
             }
             break;
         }
         default:
             break;
     }
+    
+}
+
+-(void)insertInterestToSaveIntoArray
+{
+    
+    //Sort Array
+    
+    NSSortDescriptor *sortItems = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    [self.aInterestsSelected sortUsingDescriptors:@[sortItems]];
+    
+    for (int i = 0; i < self.aInterestsSelected.count; i++)
+    {
+        
+        NSNumber *item = self.aInterestsSelected[i];
+        
+        //Proceed
+        PFObject *interest = self.aInterest[self.counter - 1];
+        [interest addUniqueObject:self.aSubInterests[item.intValue] forKey:@"topics"];
+        
+        [self.aInterestsToSave addObject:interest];
+    }
+    
+    // Now remove all items to start again
+    
+    [self.aInterestsSelected removeAllObjects];
     
 }
 
@@ -321,10 +356,14 @@
             [self.collectionView deleteItemsAtIndexPaths:self.aIndexPath];
             [self.aIndexPath removeAllObjects];
             
-            self.animating = YES;
+            self.activityCell = YES;
             [self.collectionView reloadSections:[NSIndexSet indexSetWithIndex:0]];
             
         } completion:^(BOOL finished) {
+            
+            // Save interest
+            
+            [self insertInterestToSaveIntoArray];
 
             [self downloadSubInterestFor:self.aInterest[self.counter]];
             self.counter++;
@@ -333,7 +372,8 @@
     }
     else
     {
-        //No more interests
+        //save last bunch of subinterests
+        [self insertInterestToSaveIntoArray];
         
         // Save all interest in Parse
         

@@ -33,6 +33,7 @@
 		89335BD81B11043500E4F5A6 /* FindUserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89335BD71B11043500E4F5A6 /* FindUserTableViewCell.m */; };
 		89335BDB1B11044200E4F5A6 /* UserTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89335BDA1B11044200E4F5A6 /* UserTableViewCell.m */; };
 		89373F661B0AD10600A36A1D /* backArrowLine.png in Resources */ = {isa = PBXBuildFile; fileRef = 89373F651B0AD10600A36A1D /* backArrowLine.png */; };
+		894713081B1413B7009B9BF2 /* iPhoneSpects.m in Sources */ = {isa = PBXBuildFile; fileRef = 894713071B1413B7009B9BF2 /* iPhoneSpects.m */; };
 		89D31A9F1B10F6E7004875ED /* FindContactTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D31A9E1B10F6E7004875ED /* FindContactTableViewController.m */; };
 		89D31AA21B10FA3B004875ED /* AffinityCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D31AA11B10FA3B004875ED /* AffinityCenter.m */; };
 		89ED01431B0AE50D00225C4E /* intro_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 89ED013E1B0AE50D00225C4E /* intro_2.jpg */; };
@@ -176,6 +177,8 @@
 		89335BD91B11044200E4F5A6 /* UserTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserTableViewCell.h; path = hap/UserTableViewCell.h; sourceTree = SOURCE_ROOT; };
 		89335BDA1B11044200E4F5A6 /* UserTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserTableViewCell.m; path = hap/UserTableViewCell.m; sourceTree = SOURCE_ROOT; };
 		89373F651B0AD10600A36A1D /* backArrowLine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backArrowLine.png; sourceTree = "<group>"; };
+		894713061B1413B7009B9BF2 /* iPhoneSpects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = iPhoneSpects.h; path = hap/iPhoneSpects.h; sourceTree = SOURCE_ROOT; };
+		894713071B1413B7009B9BF2 /* iPhoneSpects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = iPhoneSpects.m; path = hap/iPhoneSpects.m; sourceTree = SOURCE_ROOT; };
 		89D31A9D1B10F6E7004875ED /* FindContactTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FindContactTableViewController.h; path = hap/FindContactTableViewController.h; sourceTree = SOURCE_ROOT; };
 		89D31A9E1B10F6E7004875ED /* FindContactTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FindContactTableViewController.m; path = hap/FindContactTableViewController.m; sourceTree = SOURCE_ROOT; };
 		89D31AA01B10FA3B004875ED /* AffinityCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AffinityCenter.h; path = hap/AffinityCenter.h; sourceTree = SOURCE_ROOT; };
@@ -375,6 +378,8 @@
 				890D2C311B0A5D6400170012 /* InterestEqualObject.m */,
 				89D31AA01B10FA3B004875ED /* AffinityCenter.h */,
 				89D31AA11B10FA3B004875ED /* AffinityCenter.m */,
+				894713061B1413B7009B9BF2 /* iPhoneSpects.h */,
+				894713071B1413B7009B9BF2 /* iPhoneSpects.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -1080,6 +1085,7 @@
 				D2BEE3E31B03CE6F0087E842 /* FXBlurView.m in Sources */,
 				D2BEE4381B07A3950087E842 /* ContactsTableViewController.m in Sources */,
 				D2F47CE11B097026001F4E03 /* ResultTableViewCell.m in Sources */,
+				894713081B1413B7009B9BF2 /* iPhoneSpects.m in Sources */,
 				D2F47CC31B0853EA001F4E03 /* TTMQRCodeReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

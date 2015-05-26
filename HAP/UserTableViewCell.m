@@ -10,7 +10,8 @@
 
 @implementation UserTableViewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     // Initialization code
     
     self.img_user.layer.cornerRadius = 25;

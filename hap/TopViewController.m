@@ -50,7 +50,7 @@
 
 -(void)moveToQuestion:(int)question
 {
-    int percentage = ((question*100)/47);
+    int percentage = ((question*100)/self.questionsCounter);
     
     CGFloat width = ((percentage * self.viewBackBar.frame.size.width) / 100);
     

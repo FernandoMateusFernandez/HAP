@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *img_tootlTip;
 
 
-
+@property (nonatomic) int questionsCounter;
 
 -(void)startPosition;
 -(void)moveToQuestion:(int)question;

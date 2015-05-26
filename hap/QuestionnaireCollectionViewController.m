@@ -10,6 +10,7 @@
 #import "TopViewController.h"
 #import "QuestionnairePopUpView.h"
 #import "ProfileCollectionViewController.h"
+#import "iPhoneSpects.h"
 
 @interface QuestionnaireCollectionViewController ()
 
@@ -80,6 +81,7 @@
 {
 
     PFQuery *query = [PFQuery queryWithClassName:@"Question"];
+    [query whereKey:@"language" equalTo:[iPhoneSpects language]];
     [query orderByAscending:@"number"];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
@@ -91,6 +93,8 @@
             self.progressCell = NO;
             
             self.aQuestions = objects;
+            
+            self.topView.questionsCounter = self.aQuestions.count;
             
             [self insertArrayIntoCollectionView];
         }
@@ -208,7 +212,7 @@
                 
             }];
             
-            if(indexPath.row == 47)
+            if(indexPath.row == self.aQuestions.count)
             {
                 cell.lbl_lastQuestion.hidden = NO;
             }
@@ -245,7 +249,7 @@
     
     NSIndexPath *currentItem = [self.collectionView indexPathForCell:cell];
     
-    if(currentItem.row != 47)
+    if(currentItem.row != self.aQuestions.count - 1)
     {
         NSIndexPath *nextItem = [NSIndexPath indexPathForItem:currentItem.item + 1 inSection:currentItem.section];
         
@@ -269,7 +273,7 @@
     
     NSIndexPath *currentItem = [self.collectionView indexPathForCell:cell];
     
-    if(currentItem.row != 47)
+    if(currentItem.row != self.aQuestions.count - 1)
     {
         
         NSIndexPath *nextItem = [NSIndexPath indexPathForItem:currentItem.item + 1 inSection:currentItem.section];

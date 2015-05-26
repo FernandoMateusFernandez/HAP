@@ -15,5 +15,4 @@
 @interface QuestionnaireCollectionViewController : UICollectionViewController <QuestionCollectionViewCellDelegate, QuestionnairePopUpViewDelegate>
 
 
-
 @end

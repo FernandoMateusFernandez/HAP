@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
     // initialization
     self.aUsers = [NSMutableArray new];
     
@@ -44,7 +43,7 @@
     {
         PFQuery *query = [PFUser query];
         
-        [query whereKey:@"name" containsString:text];
+        [query whereKey:@"name" containsString:text.capitalizedString];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
             
@@ -60,6 +59,8 @@
     else
     {
         [self.aUsers removeAllObjects];
+        
+        [self insertUsersIntoTableView];
     }
     
 }

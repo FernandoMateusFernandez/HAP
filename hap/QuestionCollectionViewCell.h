@@ -33,6 +33,8 @@
 @property (strong, nonatomic) NSString *letter;
 @property (strong, nonatomic) NSNumber *value;
 
+@property (nonatomic) int questionsCounter;
+
 @property (strong, nonatomic) id<QuestionCollectionViewCellDelegate>delegate;
 
 - (IBAction)yesButton:(id)sender;

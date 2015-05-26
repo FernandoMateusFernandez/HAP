@@ -12,12 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
-    
-    [self.txt_findUser addTarget:self
-                        action:@selector(textUserDidChange)
-              forControlEvents:UIControlEventEditingChanged];
-    
-    
+
+    self.searchBar.delegate = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,9 +25,9 @@
 
 #pragma mark - textField Delegate
 
-- (void)textUserDidChange
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {
-    [self.delegate FindUserTableViewCellDelegateDidWriteText:self.txt_findUser.text];
+    [self.delegate FindUserTableViewCellDelegateDidWriteText:searchText];
 }
 
 

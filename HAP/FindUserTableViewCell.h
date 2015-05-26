@@ -14,9 +14,10 @@
 
 @end
 
-@interface FindUserTableViewCell : UITableViewCell <UITextFieldDelegate>
+@interface FindUserTableViewCell : UITableViewCell <UISearchBarDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *txt_findUser;
+
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @property (strong, nonatomic) id<FindUserTableViewCellDelegate>delegate;
 @end

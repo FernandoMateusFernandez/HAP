@@ -10,6 +10,7 @@
 #import "InterestCollectionViewCell.h"
 #import "SubInterestsCollectionViewController.h"
 #import "alertPopUpView.h"
+#import "NextCollectionViewCell.h"
 
 @interface InterestsCollectionViewController ()
 
@@ -161,7 +162,6 @@ static NSString * const reuseIdentifier = @"Cell";
             }
             
             break;
-            
         }
 
         case 1:
@@ -299,18 +299,25 @@ static NSString * const reuseIdentifier = @"Cell";
             {
                 cell.img_checkImage.hidden = YES;
                 
+                // Remove item
+                
+                NSNumber *item = @(indexPath.row);
+                
+                [self.aSelectedInterest removeObjectIdenticalTo:item];
+                
                 
             }
             else
             {
                 cell.img_checkImage.hidden = NO;
                 
-                PFObject *interest = [PFObject objectWithClassName:@"UserHobbie"];
+                // Add item
                 
-                interest[@"user"] = [PFUser currentUser];
-                interest[@"hobbie"] = self.aInterests[indexPath.row];
+                NSNumber *item = @(indexPath.row);
                 
-                [self.aSelectedInterest addObject:interest];
+                [self.aSelectedInterest addObject:item];
+                
+                //[self.aSelectedInterest addObject:interest];
             }
             break;
         }
@@ -325,19 +332,41 @@ static NSString * const reuseIdentifier = @"Cell";
     
 }
 
+-(NSArray *)createInterestArray
+{
+    NSMutableArray *array = [NSMutableArray new];
+    
+    //Sort Array
+    
+    NSSortDescriptor *sortItems = [NSSortDescriptor sortDescriptorWithKey:@"self" ascending:YES];
+    [self.aSelectedInterest sortUsingDescriptors:@[sortItems]];
+    
+    for (int i = 0; i < self.aSelectedInterest.count; i++)
+    {
+        
+        NSNumber *item = self.aSelectedInterest[i];
+        
+        PFObject *interest = [PFObject objectWithClassName:@"UserHobbie"];
+        
+        interest[@"user"] = [PFUser currentUser];
+        interest[@"hobbie"] = self.aInterests[item.intValue];
+        
+        [array addObject:interest];
+    }
+    
+    return array;
+}
+
 
  #pragma mark - Navigation
- 
+
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  
      SubInterestsCollectionViewController *cSubInterest = [segue destinationViewController];
      
-     cSubInterest.aInterest = self.aSelectedInterest;
+     cSubInterest.aInterest = [self createInterestArray];
      
  }
-
-- (IBAction)nextController:(id)sender {
-}
 @end

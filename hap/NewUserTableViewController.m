@@ -387,8 +387,8 @@
     newUser.password = self.txt_password.text;
     
     newUser[@"gender"] = self.txt_gender.text;
-    newUser[@"name"] = self.txt_name.text;
-    newUser[@"surname"] = self.txt_surname.text;
+    newUser[@"name"] = self.txt_name.text.capitalizedString;
+    newUser[@"surname"] = self.txt_surname.text.capitalizedString;
     
     if (self.userImage != nil)
     {
