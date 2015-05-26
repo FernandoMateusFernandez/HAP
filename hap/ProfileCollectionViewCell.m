@@ -25,6 +25,10 @@
     // Touch gestures
     
     UITapGestureRecognizer *tapPicture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPicture)];
+    
+    [self.img_image addGestureRecognizer:tapPicture];
+    
+    
 }
 
 

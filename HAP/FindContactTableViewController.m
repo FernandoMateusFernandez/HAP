@@ -7,7 +7,7 @@
 //
 
 #import "FindContactTableViewController.h"
-#import "ProfileCollectionViewController.h"
+#import "UserInfoCollectionViewController.h"
 #import "UserTableViewCell.h"
 
 
@@ -164,18 +164,15 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
     
-    UINavigationController *cNav = [segue destinationViewController];
-    
-    ProfileCollectionViewController *cProfile = (ProfileCollectionViewController *)[cNav topViewController];
+    UserInfoCollectionViewController *cUserInfo = [segue destinationViewController];
     
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     
     PFUser *selectedUser = self.aUsers[indexPath.row];
     
-    cProfile.profileUser = selectedUser;
+    cUserInfo.userToShow = selectedUser;
 }
 
 

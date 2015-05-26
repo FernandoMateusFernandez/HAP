@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "UserInfoCollectionViewCell.h"
+#import "InterestUserInfoCollectionViewCell.h"
 
-@interface UserInfoCollectionViewController : UICollectionViewController
+@interface UserInfoCollectionViewController : UICollectionViewController <UserInfoCollectionViewCellDelegate>
+
+@property (strong, nonatomic) PFUser *userToShow;
 
 @end

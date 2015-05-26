@@ -7,6 +7,7 @@
 //
 
 #import "UserInfoCollectionViewController.h"
+#import "InterestUserInfoHeaderCollectionViewCell.h"
 
 @interface UserInfoCollectionViewController ()
 
@@ -37,6 +38,7 @@ static NSString * const reuseIdentifier = @"Cell";
 {
     PFQuery *query = [PFQuery queryWithClassName:@"UserHobbie"];
     
+    [query whereKey:@"user" equalTo:self.userToShow];
     [query orderByAscending:@"createdAt"];
     [query includeKey:@"hobbie"];
     [query includeKey:@"topics"];
@@ -77,23 +79,143 @@ static NSString * const reuseIdentifier = @"Cell";
 
 #pragma mark <UICollectionViewDataSource>
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+#pragma mark <UICollectionViewDataSource>
 
-    return 0;
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    
+    return 2;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    switch (section)
+    {
+        case 0:
+            return 1;
+            break;
+            
+        case 1:
+            return 1 + self.aIndexPath.count;
+            break;
+            
+        default:
+            return 0;
+            break;
+    }
+}
 
-    return 0;
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            CGSize itemSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
+            return itemSize;
+            
+            break;
+        }
+            
+        case 1:
+        {
+            if (indexPath.row == 0)
+            {
+                CGSize itemSize = CGSizeMake(self.view.frame.size.width, 135);
+                return itemSize;
+            }
+            else
+            {
+                CGSize itemSize = CGSizeMake(self.view.frame.size.width, 40);
+                return itemSize;
+            }
+            break;
+        }
+            
+        default:
+            return CGSizeZero;
+            break;
+    }
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
-    // Configure the cell
+    switch (indexPath.section)
+    {
+        case 0:
+        {
+            UserInfoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"userInfoCell" forIndexPath:indexPath];
+            
+            
+            PFUser *user = self.userToShow;
+            
+            PFFile *imageFile = user[@"image"];
+            
+            [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                
+                cell.img_image.image = [UIImage imageWithData:data];
+                
+            }];
+            
+            cell.lbl_nameSurname.text = [NSString stringWithFormat:@"%@ %@",user[@"name"],user[@"surname"]];
+            cell.lbl_personality.text = user[@"personality"];
+            
+            // Delegate
+            cell.delegate = self;
+            
+            return cell;
+            
+            break;
+        }
+            
+        case 1:
+        {
+            if (indexPath.row == 0)
+            {
+                InterestUserInfoHeaderCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"HeaderCell" forIndexPath:indexPath];
+                
+                
+                return cell;
+            }
+            else
+            {
+                InterestUserInfoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"interestCell" forIndexPath:indexPath];
+                
+                
+                PFObject *object = self.aInterests[indexPath.row - 1];
+                PFObject *interest = object[@"hobbie"];
+                
+                
+                cell.lbl_interest.text = interest[@"name"];
+                
+                PFFile *imageFile = interest[@"image"];
+                
+                [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    
+                    cell.img_image.image = [UIImage imageWithData:data];
+                    
+                }];
+                
+                return cell;
+            }
+            
+            
+            break;
+        }
+            
+        default:
+            return nil;
+            break;
+    }
     
-    return cell;
+}
+
+#pragma mark - UserInfo Delegate
+
+- (void)UserInfoCollectionViewCellDidDismissController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*
