@@ -16,6 +16,7 @@
     
     self.img_user.layer.cornerRadius = 25;
     self.img_user.layer.borderColor = [UIColor colorWithRed:0.992 green:0.722 blue:0.004 alpha:1].CGColor;
+    self.img_user.layer.borderWidth = 1;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

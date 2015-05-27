@@ -30,7 +30,7 @@
 
 @interface ProfileRightSlidingMenu ()
 
-@property (strong, nonatomic) NSArray *aContacts;
+@property (strong, nonatomic) NSMutableArray *aContacts;
 
 @end
 
@@ -60,6 +60,7 @@
     [self downloadContactsFromParseWithBlock:nil];
 }
 
+#pragma mark - Parse
 
 -(void)downloadContactsFromParseWithBlock:(void (^)(BOOL))completion
 {
@@ -72,7 +73,7 @@
         
         if (error == nil)
         {
-            self.aContacts = objects;
+            self.aContacts = [NSMutableArray arrayWithArray: objects];
             
             [self insertContactsIntoTableView];
             
@@ -91,6 +92,14 @@
         }
         
     }];
+}
+
+
+-(void)deleteContact:(PFObject *)contact completion:(void(^)(BOOL successfull))completion
+{
+    [contact deleteInBackground];
+
+    completion(YES);
 }
 
 #pragma mark - TableView Methods
@@ -137,6 +146,7 @@
     
     
     PFFile *imageFile = contact[@"image"];
+    cell.img_user.image = [UIImage imageNamed:@"placeholder"];
     
     [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
         
@@ -151,6 +161,30 @@
     
     
 }
+
+// Delete
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        PFObject *contactToDelete = self.aContacts[indexPath.row];
+        
+        [self deleteContact:contactToDelete completion:^(BOOL successfull) {
+            
+            
+            [self.aContacts removeObjectAtIndex:indexPath.row];
+            
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }];
+        
+        
+    }
+}
+
+
+
 
 #pragma mark - PullToRefresh
 

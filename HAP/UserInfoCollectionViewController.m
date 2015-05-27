@@ -201,12 +201,22 @@ static NSString * const reuseIdentifier = @"Cell";
                 
                 
                 cell.lbl_interest.text = interest[@"name"];
+                cell.img_image.image = nil;
                 
                 PFFile *imageFile = interest[@"image"];
                 
                 [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                     
-                    cell.img_image.image = [UIImage imageWithData:data];
+                    if (data != nil)
+                    {
+                        cell.img_image.image = [UIImage imageWithData:data];
+                    }
+                    else
+                    {
+                        
+                    }
+                    
+                    
                     
                 }];
                 
