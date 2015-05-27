@@ -19,7 +19,7 @@
 
 
 
-+(void)calculateAffinityWithUser:(PFUser *)user
++(void)affinityWithUser:(PFUser *)user
                          contact:(PFUser *)contact
                       completion:(void (^)(NSNumber *factor, NSArray *aSimilarInterests))completionHandler
 {
@@ -39,6 +39,7 @@
             
             PFObject *factor = [objects lastObject];
             affinityFactor = factor[@"factor"];
+            affinityFactor = [NSNumber numberWithInt:((affinityFactor.intValue * 100) / 8)];
             
 
             //User hobbies

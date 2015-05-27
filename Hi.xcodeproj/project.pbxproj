@@ -55,6 +55,7 @@
 		D217682B1B01547F00E3CE67 /* QuestionCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D217682A1B01547F00E3CE67 /* QuestionCollectionViewCell.m */; };
 		D28A192B1B00FEFD00D671B1 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28A192A1B00FEFD00D671B1 /* RootViewController.m */; };
 		D28A192E1B01000E00D671B1 /* SplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D28A192D1B01000E00D671B1 /* SplashViewController.m */; };
+		D2A44EAA1B15390700241448 /* checkWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = D2A44EA91B15390700241448 /* checkWhite.png */; };
 		D2BEE3A51B0230870087E842 /* InterestsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BEE3A41B0230870087E842 /* InterestsCollectionViewController.m */; };
 		D2BEE3A81B02316C0087E842 /* InterestCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2BEE3A71B02316C0087E842 /* InterestCollectionViewCell.m */; };
 		D2BEE3AC1B023BA00087E842 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2BEE3AB1B023BA00087E842 /* AVFoundation.framework */; };
@@ -214,6 +215,7 @@
 		D28A192A1B00FEFD00D671B1 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		D28A192C1B01000E00D671B1 /* SplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashViewController.h; sourceTree = "<group>"; };
 		D28A192D1B01000E00D671B1 /* SplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashViewController.m; sourceTree = "<group>"; };
+		D2A44EA91B15390700241448 /* checkWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkWhite.png; sourceTree = "<group>"; };
 		D2BEE3A31B0230870087E842 /* InterestsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsCollectionViewController.h; sourceTree = "<group>"; };
 		D2BEE3A41B0230870087E842 /* InterestsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsCollectionViewController.m; sourceTree = "<group>"; };
 		D2BEE3A61B02316C0087E842 /* InterestCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestCollectionViewCell.h; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 		D21767A31B01110A00E3CE67 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D2A44EA91B15390700241448 /* checkWhite.png */,
 				89ED01481B0AE51100225C4E /* Splash */,
 				89373F651B0AD10600A36A1D /* backArrowLine.png */,
 				D2F47CD41B0866E0001F4E03 /* arrowBackWhite.png */,
@@ -1031,6 +1034,7 @@
 				D2BEE4291B068F8A0087E842 /* closeButton.png in Resources */,
 				89ED01441B0AE50D00225C4E /* intro_1.jpg in Resources */,
 				D2BEE3EC1B03FEB60087E842 /* HAP_icon001.png in Resources */,
+				D2A44EAA1B15390700241448 /* checkWhite.png in Resources */,
 				D2BEE3EA1B03FD8E0087E842 /* userNoBorder.png in Resources */,
 				D2BEE3CA1B02D07A0087E842 /* checkGreen.png in Resources */,
 				892AEFB31AAB521D00FA906B /* Images.xcassets in Resources */,

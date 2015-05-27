@@ -8,11 +8,15 @@
 
 #import "UserInfoCollectionViewController.h"
 #import "InterestUserInfoHeaderCollectionViewCell.h"
+#import "AffinityCenter.h"
+#import "ProgressIndicatorView.h"
 
 @interface UserInfoCollectionViewController ()
 
 @property (strong, nonatomic) NSMutableArray *aIndexPath;
 @property (strong, nonatomic) NSArray *aInterests;
+
+@property (strong, nonatomic) NSNumber *factor;
 
 @end
 
@@ -49,6 +53,8 @@ static NSString * const reuseIdentifier = @"Cell";
         {
             self.aInterests = objects;
             
+            // Get affinity factor
+            
             [self insertArrayIntoCollectionView];
         }
     }];
@@ -72,12 +78,9 @@ static NSString * const reuseIdentifier = @"Cell";
         [self.collectionView insertItemsAtIndexPaths:self.aIndexPath];
         
         
-        
     } completion:nil];
 }
 
-
-#pragma mark <UICollectionViewDataSource>
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -161,6 +164,16 @@ static NSString * const reuseIdentifier = @"Cell";
             cell.lbl_nameSurname.text = [NSString stringWithFormat:@"%@ %@",user[@"name"],user[@"surname"]];
             cell.lbl_personality.text = user[@"personality"];
             
+            if ([cell.lbl_affinityPercentage.text isEqualToString:@""])
+            {
+                [AffinityCenter affinityWithUser:[PFUser currentUser] contact:self.userToShow completion:^(NSNumber *factor, NSArray *aSimilarInterests) {
+                    
+                    cell.lbl_affinityPercentage.text = [NSString stringWithFormat:@"%d %%",factor.intValue];
+                    self.factor = factor;
+                    
+                }];
+            }
+            
             // Delegate
             cell.delegate = self;
             
@@ -212,6 +225,51 @@ static NSString * const reuseIdentifier = @"Cell";
 }
 
 #pragma mark - UserInfo Delegate
+
+- (void)UserInfoCollectionViewCellAddUser
+{
+    
+    //View
+    
+    UIView *backView = [[UIView alloc] initWithFrame:self.view.bounds];
+    
+    ProgressIndicatorView *viewProgress = [[ProgressIndicatorView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width - 50, self.view.bounds.size.height - 10)
+                                                                             transform:CGAffineTransformMakeScale(1.4, 1.4)
+                                                                        backgroundView:backView
+                                                                   backgroundViewColor:[UIColor clearColor]
+                                                                   backgroundViewAlpha:0.6
+                                                                             superView:self.view
+                                                                            textToShow:@"Adding user"];
+    
+    [viewProgress openPopUp];
+
+    
+    //
+    
+    
+    PFObject *newContact = [PFObject objectWithClassName:@"Contact"];
+    
+    newContact[@"user"] = [PFUser currentUser];
+    newContact[@"contact"] = self.userToShow;
+    newContact[@"factor"] = self.factor;
+    
+    [newContact saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        
+        if(succeeded == YES)
+        {
+            
+            [viewProgress closePopUpWithMessage:@"User added" withCheck:YES completion:^(BOOL finished) {
+                
+                [self dismissViewControllerAnimated:YES completion:nil];
+                
+            }];
+            
+            
+        }
+        
+    }];
+}
 
 /*
  #pragma mark - Navigation

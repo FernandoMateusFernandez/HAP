@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (strong, nonatomic) UIView *backgroundView;
+@property (weak, nonatomic) IBOutlet UIImageView *img_check;
 
 - (id)initWithFrame:(CGRect)frame
           transform:(CGAffineTransform)transform
@@ -28,5 +29,6 @@ backgroundViewAlpha:(CGFloat)bAlpha
 
 -(void)openPopUp;
 -(void)closePopUp;
+-(void)closePopUpWithMessage:(NSString *)text withCheck:(BOOL)showCheck completion:(void(^)(BOOL finished))completionHandler;
 
 @end

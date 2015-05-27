@@ -19,6 +19,9 @@
     self.img_image.layer.borderWidth = 2;
     
     self.btn_done.layer.cornerRadius = 20;
+    
+    self.viewPercentageView.layer.cornerRadius = 31;
+    
 }
 
 - (IBAction)addContact:(id)sender {

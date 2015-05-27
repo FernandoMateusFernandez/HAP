@@ -40,6 +40,10 @@
         
         self.viewCenterView.layer.cornerRadius = 15;
         
+        // Views
+        
+        _img_check.hidden = YES;
+        
         
     }
     
@@ -83,6 +87,37 @@
                             
                             
                         } completion:nil];
+    
+    
+}
+
+-(void)closePopUpWithMessage:(NSString *)text withCheck:(BOOL)showCheck completion:(void(^)(BOOL finished))completionHandler
+{
+    self.activityView.hidden = YES;
+    self.lbl_text.text = text;
+    
+    if (showCheck == YES)
+    {
+        self.img_check.hidden = NO;
+    }
+    
+    [UIView animateWithDuration:0.4
+                          delay:1
+         usingSpringWithDamping:1
+          initialSpringVelocity:1.9
+                        options:UIViewAnimationOptionCurveLinear animations:^{
+                            
+                            self.backgroundView.alpha = 0;
+                            self.transform = CGAffineTransformMakeScale(1.4, 1.4);
+                            self.alpha = 0;
+                            
+                            
+                        } completion:^(BOOL finished) {
+                            
+                            
+                            completionHandler(YES);
+                            
+                        }];
     
     
 }

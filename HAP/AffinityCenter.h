@@ -12,7 +12,7 @@
 @interface AffinityCenter : NSObject
 
 
-+(void)calculateAffinityWithUser:(PFUser *)user
++(void)affinityWithUser:(PFUser *)user
                          contact:(PFUser *)contact
                       completion:(void (^)(NSNumber *factor, NSArray *aSimilarInterests))completionHandler;
 

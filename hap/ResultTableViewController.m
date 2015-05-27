@@ -64,7 +64,7 @@
 
 -(void)calculateAffinity
 {
-    [AffinityCenter calculateAffinityWithUser:self.user contact:self.contact completion:^(NSNumber *factor, NSArray *aSimilarInterests) {
+    [AffinityCenter affinityWithUser:self.user contact:self.contact completion:^(NSNumber *factor, NSArray *aSimilarInterests) {
         
         self.factor = factor;
         self.aSimilarInterests = aSimilarInterests;

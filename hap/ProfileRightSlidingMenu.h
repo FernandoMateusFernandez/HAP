@@ -26,6 +26,7 @@
 
 #import "AMSlideMenuRightTableViewController.h"
 
+
 @interface ProfileRightSlidingMenu : AMSlideMenuRightTableViewController
 
 @end

@@ -25,6 +25,14 @@
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE
 
 #import "ProfileRightSlidingMenu.h"
+#import <Parse/Parse.h>
+#import "UserTableViewCell.h"
+
+@interface ProfileRightSlidingMenu ()
+
+@property (strong, nonatomic) NSArray *aContacts;
+
+@end
 
 @implementation ProfileRightSlidingMenu
 
@@ -36,6 +44,127 @@
     {
         self.tableView.contentInset = UIEdgeInsetsMake(20, 0, 0, 0);
     }
+    
+    // Pull To Refresh
+    
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    
+    [refreshControl addTarget:self
+                       action:@selector(startRefresh:)
+             forControlEvents:UIControlEventValueChanged];
+    
+    
+    [self.tableView addSubview:refreshControl];
+    
+    
+    [self downloadContactsFromParseWithBlock:nil];
+}
+
+
+-(void)downloadContactsFromParseWithBlock:(void (^)(BOOL))completion
+{
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Contact"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+    [query includeKey:@"contact"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if (error == nil)
+        {
+            self.aContacts = objects;
+            
+            [self insertContactsIntoTableView];
+            
+            if (completion != nil)
+            {
+                completion(YES);
+            }
+
+        }
+        else
+        {
+            if (completion != nil)
+            {
+                completion(NO);
+            }
+        }
+        
+    }];
+}
+
+#pragma mark - TableView Methods
+
+-(void)insertContactsIntoTableView
+{
+    [self.tableView beginUpdates];
+    
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+    [self.tableView endUpdates];
+}
+
+
+#pragma mark - TableView Delegate and DataSource
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.aContacts.count;
+}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 65.0f;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UserTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userCell"forIndexPath:indexPath];
+    
+    PFObject *contactObject = self.aContacts[indexPath.row];
+    PFUser *contact = contactObject[@"contact"];
+    
+    cell.lbl_name.text = [NSString stringWithFormat:@"%@ %@",contact[@"name"],contact[@"surname"]];
+    
+    
+    
+    
+    PFFile *imageFile = contact[@"image"];
+    
+    [imageFile getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        
+        if (error == nil)
+        {
+            cell.img_user.image = [UIImage imageWithData:data];
+        }
+        
+    }];
+    
+    return cell;
+    
+    
+}
+
+#pragma mark - PullToRefresh
+
+-(void)startRefresh:(UIRefreshControl *)refreshControl
+{
+
+    [refreshControl beginRefreshing];
+
+    [self downloadContactsFromParseWithBlock:^(BOOL successfull) {
+        
+        
+        [refreshControl endRefreshing];
+        
+    }];
 }
 
 @end

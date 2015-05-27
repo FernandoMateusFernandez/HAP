@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *lbl_contactsCounter;
 @property (weak, nonatomic) IBOutlet UIButton *btn_done;
 @property (weak, nonatomic) IBOutlet UILabel *lbl_affinityPercentage;
+@property (weak, nonatomic) IBOutlet UIView *viewPercentageView;
 
 @property (strong, nonatomic) id<UserInfoCollectionViewCellDelegate>delegate;
 

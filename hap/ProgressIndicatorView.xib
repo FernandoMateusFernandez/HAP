@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProgressIndicatorView">
             <connections>
                 <outlet property="activityView" destination="r5w-rk-CK3" id="hde-FE-OcU"/>
+                <outlet property="img_check" destination="dPW-g5-2tL" id="L0F-ab-fu8"/>
                 <outlet property="lbl_text" destination="vpf-RP-N92" id="mjZ-3y-gSW"/>
                 <outlet property="mainView" destination="iN0-l3-epB" id="mzZ-nc-bEu"/>
                 <outlet property="viewCenterView" destination="btO-pP-TS7" id="sxl-Aw-tga"/>
@@ -24,30 +25,39 @@
                             <rect key="frame" x="65" y="90" width="20" height="20"/>
                             <color key="color" red="1" green="1" blue="1" alpha="0.5" colorSpace="calibratedRGB"/>
                         </activityIndicatorView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkWhite.png" translatesAutoresizingMaskIntoConstraints="NO" id="dPW-g5-2tL">
+                            <rect key="frame" x="50" y="75" width="50" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="N4N-hg-gvu"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logging in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpf-RP-N92">
+                            <rect key="frame" x="0.0" y="8" width="150" height="45"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="CWS-Cc-hHa"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.16944839015151514" green="0.16944839015151514" blue="0.16944839015151514" alpha="0.75" colorSpace="calibratedRGB"/>
                     <constraints>
+                        <constraint firstItem="dPW-g5-2tL" firstAttribute="leading" secondItem="btO-pP-TS7" secondAttribute="leading" constant="50" id="06E-Hd-te2"/>
                         <constraint firstItem="r5w-rk-CK3" firstAttribute="leading" secondItem="btO-pP-TS7" secondAttribute="leading" constant="65" id="3Tu-TM-ZxO"/>
+                        <constraint firstAttribute="trailing" secondItem="dPW-g5-2tL" secondAttribute="trailing" constant="50" id="59b-xt-UaZ"/>
+                        <constraint firstAttribute="bottom" secondItem="dPW-g5-2tL" secondAttribute="bottom" constant="27" id="EiG-kT-h4f"/>
                         <constraint firstAttribute="trailing" secondItem="r5w-rk-CK3" secondAttribute="trailing" constant="65" id="Ig8-8p-UCm"/>
+                        <constraint firstItem="vpf-RP-N92" firstAttribute="leading" secondItem="btO-pP-TS7" secondAttribute="leading" id="NJk-Zy-5wM"/>
                         <constraint firstAttribute="width" constant="150" id="NOe-SQ-pwk"/>
                         <constraint firstAttribute="height" constant="150" id="NlY-yT-b5H"/>
                         <constraint firstAttribute="bottom" secondItem="r5w-rk-CK3" secondAttribute="bottom" constant="40" id="P7t-nC-GQM"/>
+                        <constraint firstAttribute="trailing" secondItem="vpf-RP-N92" secondAttribute="trailing" id="ggv-Mj-tVW"/>
+                        <constraint firstItem="vpf-RP-N92" firstAttribute="top" secondItem="btO-pP-TS7" secondAttribute="top" constant="8" id="hXi-Mp-w0C"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logging in" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpf-RP-N92">
-                    <rect key="frame" x="85" y="217" width="150" height="45"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="45" id="s4F-U3-SBK"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="19"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="vpf-RP-N92" secondAttribute="trailing" constant="85" id="Ajb-8y-gZH"/>
-                <constraint firstItem="vpf-RP-N92" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="217" id="GQf-YI-3kz"/>
-                <constraint firstItem="vpf-RP-N92" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="85" id="aKZ-LE-iGZ"/>
                 <constraint firstAttribute="centerY" secondItem="btO-pP-TS7" secondAttribute="centerY" id="i4U-MZ-ewI"/>
                 <constraint firstAttribute="centerX" secondItem="btO-pP-TS7" secondAttribute="centerX" id="oBZ-Vn-YJS"/>
             </constraints>
@@ -55,6 +65,9 @@
             <point key="canvasLocation" x="240" y="324"/>
         </view>
     </objects>
+    <resources>
+        <image name="checkWhite.png" width="188" height="188"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
